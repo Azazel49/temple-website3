@@ -1,1 +1,99 @@
-dheh
+/* =====================================================
+   SRI DIVINE TEMPLE TRUST - Responsive Styles
+   Desktop-First Breakpoints (Max-Width)
+   ===================================================== */
+
+/* =====================================================
+   LARGE TABLETS & SMALL DESKTOPS (max-width: 1200px)
+   ===================================================== */
+@media (max-width: 1200px) {
+  .container { max-width: 960px; }
+  .hero-content { max-width: 700px; }
+}
+
+/* =====================================================
+   TABLETS (max-width: 992px)
+   ===================================================== */
+@media (max-width: 992px) {
+  .container { max-width: 768px; }
+
+  /* Navigation & Top Bar */
+  .top-bar { display: none; }
+  .menu-toggle { display: flex; }
+  
+  .nav-menu {
+    position: fixed; top: 70px; left: 0; right: 0;
+    background: var(--bg-white); flex-direction: column;
+    padding: var(--space-xl); gap: var(--space-md);
+    box-shadow: var(--shadow-lg); transform: translateY(-100%);
+    opacity: 0; visibility: hidden; transition: all 0.3s ease;
+  }
+  .nav-menu.active { transform: translateY(0); opacity: 1; visibility: visible; }
+  .nav-menu a { display: block; padding: 1rem; text-align: center; }
+
+  /* Grid Resets */
+  .digital-grid, .logistics-grid, .tier-grid { grid-template-columns: 1fr; }
+  
+  /* Maha Darshan Gallery Fix for Mobile */
+  .darshan-grid { 
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto; 
+  }
+  .darshan-item { 
+    height: 350px; 
+  }
+  .feature-darshan { 
+    grid-row: span 1; 
+  }
+}
+
+/* =====================================================
+   LARGE PHONES (max-width: 768px)
+   ===================================================== */
+@media (max-width: 768px) {
+  .container { max-width: 100%; padding: 0 1rem; }
+  
+  .hero { min-height: 85vh; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .hero-buttons .btn { width: 100%; max-width: 280px; }
+  
+  .darshan-overlay { padding: 1.5rem; transform: translateY(0); } /* Always show overlay on phones */
+}
+
+/* =====================================================
+   SMALL PHONES (max-width: 576px)
+   ===================================================== */
+@media (max-width: 576px) {
+  .section-header h2 { font-size: 1.8rem; }
+  .logo-icon { font-size: 1.5rem; }
+  .main-title { font-size: 1.1rem; }
+  .btn { padding: 10px 20px; font-size: 0.9rem; }
+  .tier-card { padding: 1.5rem; }
+  .prasadam-card { padding: 1.5rem; }
+}
+
+/* =====================================================
+   ACCESSIBILITY & REDUCED MOTION
+   ===================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :focus-visible { outline: 3px solid var(--primary-color); outline-offset: 2px; transition: outline-offset 0.15s ease; }
+}
+
+/* =====================================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ===================================================== */
+@media (hover: none) and (pointer: coarse) {
+  .btn { min-height: 44px; min-width: 44px; }
+  .tier-card:hover, .logic-card:hover { transform: none !important; }
+}
