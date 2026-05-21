@@ -1,1 +1,375 @@
-hh
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Official Web Portal of Sri Divine Temple Trust. Book VIP Darshan, E-Prasadam, and Special Aartis online.">
+    <title>Sri Divine Temple Trust - Official Portal</title>
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:;">
+    
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🛕</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="lang-en">
+    
+    <!-- Official Trust Top Bar -->
+    <div class="top-bar">
+        <div class="container flex-between">
+            <div class="top-info">
+                <span class="trust-badge">🛡️ <span data-lang="en">All Donations are 80G Tax Exempted</span><span data-lang="hi">सभी दान 80G कर मुक्त हैं</span></span>
+                <span class="helpline">📞 <span data-lang="en">24/7 Yatra Helpline: 1800-108-1008</span><span data-lang="hi">24/7 यात्रा हेल्पलाइन: 1800-108-1008</span></span>
+            </div>
+            <button id="langToggle" class="lang-toggle" aria-label="Toggle Language">
+                <span class="lang-indicator en active">EN</span>
+                <span class="lang-separator">|</span>
+                <span class="lang-indicator hi">हि</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container flex-between">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🛕</span>
+                <span class="logo-text">
+                    <span class="trust-title" data-lang="en">OFFICIAL WEB PORTAL</span>
+                    <span class="trust-title" data-lang="hi">आधिकारिक वेब पोर्टल</span>
+                    <span class="main-title" data-lang="en">Sri Divine Temple Trust</span>
+                    <span class="main-title" data-lang="hi">श्री दिव्य मंदिर ट्रस्ट</span>
+                </span>
+            </a>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="active" data-lang="en">Home</a><a href="#hero" class="active" data-lang="hi">मुखपृष्ठ</a></li>
+                <li><a href="#seva" data-lang="en">Darshan & Seva</a><a href="#seva" data-lang="hi">दर्शन और सेवा</a></li>
+                <li><a href="#digital" data-lang="en">Live Darshan</a><a href="#digital" data-lang="hi">लाइव दर्शन</a></li>
+                <li><a href="#gallery" data-lang="en">Gallery</a><a href="#gallery" data-lang="hi">दीर्घा</a></li>
+                <li><a href="#yatra" data-lang="en">Plan Yatra</a><a href="#yatra" data-lang="hi">यात्रा योजना</a></li>
+                <li><a href="#" class="btn-donate-nav" onclick="PaymentGateway.showPaymentModal(1100); return false;" data-lang="en">💝 Donate Online</a><a href="#" class="btn-donate-nav" onclick="PaymentGateway.showPaymentModal(1100); return false;" data-lang="hi">💝 ऑनलाइन दान</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="floating-oms">
+                <span class="floating-om" style="top: 10%; left: 10%;">ॐ</span>
+                <span class="floating-om" style="top: 20%; right: 15%;">ॐ</span>
+                <span class="floating-om" style="top: 60%; left: 5%;">ॐ</span>
+            </div>
+
+            <div class="hero-content">
+                <div class="sanskrit-mantra">
+                    <p class="mantra-sanskrit">ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम् |<br>उर्वारुकमिव बन्धनान्मृत्योर्मुक्षीय माऽमृतात् ||</p>
+                </div>
+
+                <h1 data-lang="en">Experience the Divine Grace of the Himalayas</h1>
+                <h1 data-lang="hi">हिमालय की दिव्य कृपा का अनुभव करें</h1>
+                
+                <p class="hero-subtitle" data-lang="en">Book your VIP Darshan, participate in live Aartis, and receive home-delivered Prasadam through our official trust portal.</p>
+                <p class="hero-subtitle" data-lang="hi">वीआईपी दर्शन बुक करें, लाइव आरती में भाग लें, और हमारे आधिकारिक ट्रस्ट पोर्टल के माध्यम से घर पर प्रसादम प्राप्त करें।</p>
+
+                <div class="hero-buttons">
+                    <a href="#seva" class="btn btn-primary">
+                        <span class="btn-icon">🙏</span>
+                        <span data-lang="en">Book Sugam Darshan</span>
+                        <span data-lang="hi">सुगम दर्शन बुक करें</span>
+                    </a>
+                    <a href="#digital" class="btn btn-glass">
+                        <span class="btn-icon">🎥</span>
+                        <span data-lang="en">Watch Live Darshan</span>
+                        <span data-lang="hi">लाइव दर्शन देखें</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-overlay"></div>
+        </section>
+
+        <!-- Premium Seva & Darshan Tiers -->
+        <section class="seva-section" id="seva">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 data-lang="en">Online Seva & Darshan Booking</h2>
+                    <h2 data-lang="hi">ऑनलाइन सेवा और दर्शन बुकिंग</h2>
+                    <div class="section-divider">
+                        <span class="divider-symbol">🪷</span><div class="divider-line"></div><span class="divider-symbol">🪷</span>
+                    </div>
+                </div>
+
+                <div class="tier-grid">
+                    <!-- VIP Darshan -->
+                    <div class="tier-card premium-tier">
+                        <div class="tier-badge" data-lang="en">Most Popular</div>
+                        <div class="tier-badge" data-lang="hi">सबसे लोकप्रिय</div>
+                        <div class="tier-icon">✨</div>
+                        <h3 data-lang="en">Sugam Darshan (VIP)</h3>
+                        <h3 data-lang="hi">सुगम दर्शन (वीआईपी)</h3>
+                        <p class="tier-price">₹1,100 <span data-lang="en">per person</span><span data-lang="hi">प्रति व्यक्ति</span></p>
+                        <ul class="tier-features" data-lang="en">
+                            <li>✓ Dedicated fast-track entry</li>
+                            <li>✓ Dedicated guide assistance</li>
+                            <li>✓ Includes dry prasadam box</li>
+                        </ul>
+                        <ul class="tier-features" data-lang="hi">
+                            <li>✓ समर्पित फास्ट-ट्रैक प्रवेश</li>
+                            <li>✓ समर्पित गाइड सहायता</li>
+                            <li>✓ सूखा प्रसादम बॉक्स शामिल है</li>
+                        </ul>
+                        <button class="btn btn-primary w-100" onclick="Forms.showBookingModal('Sugam Darshan', 1100)">
+                            <span data-lang="en">Book Slot</span><span data-lang="hi">स्लॉट बुक करें</span>
+                        </button>
+                    </div>
+
+                    <!-- Special Aarti -->
+                    <div class="tier-card">
+                        <div class="tier-icon">🪔</div>
+                        <h3 data-lang="en">Special Mangala Aarti</h3>
+                        <h3 data-lang="hi">विशेष मंगला आरती</h3>
+                        <p class="tier-price">₹2,100 <span data-lang="en">per family</span><span data-lang="hi">प्रति परिवार</span></p>
+                        <ul class="tier-features" data-lang="en">
+                            <li>✓ 4:00 AM exclusive entry</li>
+                            <li>✓ Garbha Griha proximity</li>
+                            <li>✓ Sankalp by head priest</li>
+                        </ul>
+                        <ul class="tier-features" data-lang="hi">
+                            <li>✓ प्रातः 4:00 बजे विशेष प्रवेश</li>
+                            <li>✓ गर्भगृह की निकटता</li>
+                            <li>✓ मुख्य पुजारी द्वारा संकल्प</li>
+                        </ul>
+                        <button class="btn btn-outline w-100" onclick="Forms.showBookingModal('Mangala Aarti', 2100)">
+                            <span data-lang="en">Book Aarti</span><span data-lang="hi">आरती बुक करें</span>
+                        </button>
+                    </div>
+
+                    <!-- Senior Citizen -->
+                    <div class="tier-card free-tier">
+                        <div class="tier-icon">👨‍🦳</div>
+                        <h3 data-lang="en">Senior / Divyang Darshan</h3>
+                        <h3 data-lang="hi">वरिष्ठ / दिव्यांग दर्शन</h3>
+                        <p class="tier-price" data-lang="en">Free Service</p>
+                        <p class="tier-price" data-lang="hi">निःशुल्क सेवा</p>
+                        <ul class="tier-features" data-lang="en">
+                            <li>✓ Wheelchair accessibility</li>
+                            <li>✓ Battery car transport</li>
+                            <li>✓ Attendant allowed</li>
+                        </ul>
+                        <ul class="tier-features" data-lang="hi">
+                            <li>✓ व्हीलचेयर पहुँच</li>
+                            <li>✓ बैटरी कार परिवहन</li>
+                            <li>✓ परिचारक की अनुमति</li>
+                        </ul>
+                        <button class="btn btn-secondary w-100" onclick="Forms.showBookingModal('Senior Citizen Darshan', 0)">
+                            <span data-lang="en">Register Now</span><span data-lang="hi">अभी पंजीकरण करें</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Digital Darshan & E-Prasadam -->
+        <section class="digital-services" id="digital">
+            <div class="container">
+                <div class="digital-grid">
+                    <!-- Live Feed Placeholder -->
+                    <div class="live-feed-card">
+                        <div class="live-header flex-between">
+                            <h3 data-lang="en">🔴 Live Sanctum Sanctorum</h3>
+                            <h3 data-lang="hi">🔴 लाइव गर्भगृह दर्शन</h3>
+                            <span class="live-pulse" data-lang="en">LIVE</span>
+                            <span class="live-pulse" data-lang="hi">लाइव</span>
+                        </div>
+                        <div class="embed-container">
+                            <!-- Placeholder for YouTube/Custom HLS stream -->
+                            <div class="video-placeholder">
+                                <span class="play-icon">▶️</span>
+                                <p data-lang="en">Connecting to Live Feed...</p>
+                                <p data-lang="hi">लाइव फ़ीड से कनेक्ट हो रहा है...</p>
+                            </div>
+                        </div>
+                        <p class="feed-note" data-lang="en">Note: Photography inside the temple is strictly prohibited. This is the official trust broadcast.</p>
+                        <p class="feed-note" data-lang="hi">नोट: मंदिर के अंदर फोटोग्राफी सख्त मना है। यह आधिकारिक ट्रस्ट प्रसारण है।</p>
+                    </div>
+
+                    <!-- E-Prasadam -->
+                    <div class="prasadam-card">
+                        <div class="prasadam-icon">🎁</div>
+                        <h2 data-lang="en">Order E-Prasadam Home</h2>
+                        <h2 data-lang="hi">ई-प्रसादम घर मंगवाएं</h2>
+                        <p data-lang="en">Receive the divine blessings delivered directly to your doorstep via India Post. Includes dry fruits, bhasma, and sacred thread.</p>
+                        <p data-lang="hi">इंडिया पोस्ट के माध्यम से सीधे अपने दरवाजे पर दिव्य आशीर्वाद प्राप्त करें। सूखे मेवे, भस्म और पवित्र धागा शामिल हैं।</p>
+                        
+                        <form class="prasadam-form" id="prasadamForm" onsubmit="Forms.handlePrasadam(event)">
+                            <div class="form-group">
+                                <input type="text" required placeholder="Full Name / पूरा नाम" id="pName">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" required placeholder="City (e.g. Kanpur) / शहर" id="pCity" value="Kanpur">
+                            </div>
+                            <div class="form-group">
+                                <textarea required placeholder="Full Delivery Address / पूरा वितरण पता" id="pAddress"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">
+                                <span data-lang="en">Pay ₹501 & Order</span>
+                                <span data-lang="hi">₹501 भुगतान करें और ऑर्डर करें</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Maha Darshan Visual Gallery (Free Online Darshan) -->
+        <section class="maha-darshan" id="gallery">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 data-lang="en">Maha Darshan Gallery</h2>
+                    <h2 data-lang="hi">महा दर्शन दीर्घा</h2>
+                    <p class="section-subtitle" data-lang="en">Experience the divine presence from your home.</p>
+                    <p class="section-subtitle" data-lang="hi">अपने घर से दिव्य उपस्थिति का अनुभव करें।</p>
+                    <div class="section-divider">
+                        <span class="divider-symbol">🕉️</span><div class="divider-line"></div><span class="divider-symbol">🕉️</span>
+                    </div>
+                </div>
+
+                <div class="darshan-grid">
+                    <!-- Garbha Griha / Inner Sanctum -->
+                    <div class="darshan-item feature-darshan">
+                        <img src="https://www.namasteindiatrip.com/wp-content/uploads/2019/03/Inside-Kedarnath-Temple.jpg" alt="Inner Shrine View" loading="lazy">
+                        <div class="darshan-overlay">
+                            <span class="darshan-icon">🛕</span>
+                            <h3 data-lang="en">Garbha Griha (Inner Sanctum)</h3>
+                            <h3 data-lang="hi">गर्भगृह दर्शन</h3>
+                            <p data-lang="en">The majestic view of the main shrine and Shivalinga.</p>
+                            <p data-lang="hi">मुख्य मंदिर और शिवलिंग का राजसी दृश्य।</p>
+                            <button class="btn btn-glass btn-small" onclick="alert('Opening Fullscreen Virtual Tour... (Demo)')">
+                                <span data-lang="en">🔍 Virtual 360° Tour</span>
+                                <span data-lang="hi">🔍 360° वर्चुअल दर्शन</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Temple Architecture -->
+                    <div class="darshan-item secondary-darshan">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Devotees_offering_prayers_at_a_sanctum_in_Chennakesava_temple_at_Belur.jpg" alt="Temple Architecture View" loading="lazy">
+                        <div class="darshan-overlay">
+                            <span class="darshan-icon">🔱</span>
+                            <h3 data-lang="en">Temple Architecture</h3>
+                            <h3 data-lang="hi">मंदिर वास्तुकला</h3>
+                            <p data-lang="en">Intricate carvings of the temple interior.</p>
+                            <p data-lang="hi">मंदिर के आंतरिक भाग की जटिल नक्काशी।</p>
+                        </div>
+                    </div>
+
+                    <!-- Evening Aarti / Shringaar -->
+                    <div class="darshan-item secondary-darshan">
+                        <!-- Placeholder using CSS gradient until real images are added -->
+                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, var(--deep-red), var(--primary-dark)); display:flex; align-items:center; justify-content:center;">
+                            <span style="font-size: 5rem; opacity: 0.3;">🪔</span>
+                        </div>
+                        <div class="darshan-overlay">
+                            <span class="darshan-icon">🪔</span>
+                            <h3 data-lang="en">Bhasma Aarti Shringaar</h3>
+                            <h3 data-lang="hi">भस्म आरती शृंगार</h3>
+                            <p data-lang="en">Divine decoration during the morning aarti.</p>
+                            <p data-lang="hi">सुबह की आरती के दौरान दिव्य सजावट।</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center" style="margin-top: 2rem;">
+                    <a href="#" class="btn btn-outline" onclick="alert('Loading more divine images... (Demo)')">
+                        <span data-lang="en">View Complete Gallery</span>
+                        <span data-lang="hi">संपूर्ण दीर्घा देखें</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Yatra Planning & Logistics -->
+        <section class="logistics-section" id="yatra">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 data-lang="en">Plan Your Yatra</h2>
+                    <h2 data-lang="hi">अपनी यात्रा की योजना बनाएं</h2>
+                    <div class="section-divider">
+                        <span class="divider-symbol">🏔️</span><div class="divider-line"></div><span class="divider-symbol">🏔️</span>
+                    </div>
+                </div>
+
+                <div class="logistics-grid">
+                    <div class="logic-card">
+                        <div class="logic-icon">🏨</div>
+                        <h3 data-lang="en">Trust Dharamshala</h3>
+                        <h3 data-lang="hi">ट्रस्ट धर्मशाला</h3>
+                        <p data-lang="en">Clean, AC/Non-AC rooms managed strictly by the temple board at nominal rates.</p>
+                        <p data-lang="hi">नाममात्र दरों पर मंदिर बोर्ड द्वारा प्रबंधित स्वच्छ, एसी/नॉन-एसी कमरे।</p>
+                        <a href="#" class="logic-link" data-lang="en">Check Availability →</a>
+                        <a href="#" class="logic-link" data-lang="hi">उपलब्धता जांचें →</a>
+                    </div>
+                    <div class="logic-card">
+                        <div class="logic-icon">✈️</div>
+                        <h3 data-lang="en">How to Reach</h3>
+                        <h3 data-lang="hi">कैसे पहुंचें</h3>
+                        <p data-lang="en">Nearest Airport: Pantnagar (110km)<br>Nearest Railway: Kathgodam (85km)</p>
+                        <p data-lang="hi">निकटतम हवाई अड्डा: पंतनगर (110 किमी)<br>निकटतम रेलवे: काठगोदाम (85 किमी)</p>
+                        <a href="#" class="logic-link" data-lang="en">View Map →</a>
+                        <a href="#" class="logic-link" data-lang="hi">नक्शा देखें →</a>
+                    </div>
+                    <div class="logic-card">
+                        <div class="logic-icon">🕉️</div>
+                        <h3 data-lang="en">Dress Code & Rules</h3>
+                        <h3 data-lang="hi">ड्रेस कोड और नियम</h3>
+                        <p data-lang="en">Traditional Indian attire is mandatory. Electronics are prohibited inside.</p>
+                        <p data-lang="hi">पारंपरिक भारतीय परिधान अनिवार्य है। अंदर इलेक्ट्रॉनिक्स वर्जित हैं।</p>
+                        <a href="#" class="logic-link" data-lang="en">Read Guidelines →</a>
+                        <a href="#" class="logic-link" data-lang="hi">दिशानिर्देश पढ़ें →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Official Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 data-lang="en">Sri Divine Temple Trust</h3>
+                    <h3 data-lang="hi">श्री दिव्य मंदिर ट्रस्ट</h3>
+                    <p data-lang="en">Registered under the Hindu Religious and Charitable Endowments Act.</p>
+                    <p data-lang="hi">हिंदू धार्मिक और धर्मार्थ बंदोबस्ती अधिनियम के तहत पंजीकृत।</p>
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='50'><rect width='150' height='50' fill='rgba(255,255,255,0.1)' rx='5'/><text x='15' y='30' fill='white' font-family='sans-serif' font-size='14'>🔒 256-bit SSL Secure</text></svg>" alt="SSL Secure" class="ssl-badge">
+                </div>
+                
+                <div class="footer-contact">
+                    <h4 data-lang="en">Official Address</h4>
+                    <h4 data-lang="hi">आधिकारिक पता</h4>
+                    <p>Sri Divine Temple Complex,<br>Majkhali, Devbhoomi Uttarakhand - 263652<br>India</p>
+                    <p>Email: admin@sridivinetrust.org</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sri Divine Temple Trust. All rights reserved. | <a href="#">Terms</a> | <a href="#">Privacy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
