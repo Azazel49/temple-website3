@@ -1,1 +1,246 @@
-jdj
+/* =====================================================
+   SRI DIVINE TEMPLE TRUST - Premium Enterprise Styles
+   ===================================================== */
+
+/* =====================================================
+   CSS CUSTOM PROPERTIES (Variables)
+   ===================================================== */
+:root {
+  --primary-color: #e55a2b;
+  --primary-dark: #e55a2b;
+  --saffron: #ff9933;
+  --secondary-color: #d4af37;
+  --secondary-dark: #b8941e;
+  --secondary-light: #e8cc64;
+  --deep-red: #8b0000;
+  
+  --text-dark: #1a1a2e;
+  --text-medium: #4a4a6a;
+  --text-light: #6a6a8a;
+  --text-white: #ffffff;
+  --bg-cream: #fcf9f5;
+  --bg-light: #faf8f5;
+  --bg-dark: #0f0f1a;
+  
+  --font-primary: 'Poppins', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+  --font-devanagari: 'Noto Sans Devanagari', sans-serif;
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
+  --shadow-gold: 0 8px 25px rgba(212, 175, 55, 0.3);
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --radius-full: 50%;
+}
+
+/* =====================================================
+   RESET & BASE STYLES
+   ===================================================== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--font-primary); color: var(--text-dark); background: var(--bg-cream); overflow-x: hidden; }
+
+/* Language Toggle Logic - Core Functionality */
+body.lang-en [data-lang="hi"] { display: none !important; }
+body.lang-hi [data-lang="en"] { display: none !important; }
+
+/* Devanagari Font Enforcement for Hindi */
+[data-lang="hi"] { font-family: var(--font-devanagari); line-height: 1.4; }
+
+/* Utility Classes */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+.text-center { text-align: center; }
+.w-100 { width: 100%; }
+
+/* =====================================================
+   TYPOGRAPHY
+   ===================================================== */
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; line-height: 1.3; color: var(--text-dark); }
+.section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+.section-divider { display: flex; align-items: center; justify-content: center; gap: 15px; margin: 1rem auto 3rem; max-width: 250px; }
+.divider-line { height: 2px; flex: 1; background: linear-gradient(90deg, transparent, var(--secondary-color), transparent); }
+.divider-symbol { font-size: 1.5rem; color: var(--saffron); }
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+.btn {
+  display: inline-flex; justify-content: center; align-items: center; gap: 8px;
+  padding: 12px 24px; border-radius: var(--radius-md); font-weight: 600; border: none;
+  cursor: pointer; transition: all 0.3s ease; text-decoration: none;
+}
+.btn-primary { background: linear-gradient(135deg, var(--saffron), var(--primary-color)); color: white; box-shadow: var(--shadow-gold); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(255, 153, 51, 0.5); }
+.btn-secondary { background: var(--text-dark); color: white; }
+.btn-outline { background: transparent; border: 2px solid var(--saffron); color: var(--primary-color); }
+.btn-glass { background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); color: white; }
+.btn-glass:hover { background: rgba(255,255,255,0.3); }
+.btn-small { padding: 8px 16px; font-size: 0.85rem; }
+.btn-donate-nav { background: var(--saffron); color: white !important; padding: 8px 16px !important; border-radius: var(--radius-sm); }
+
+/* =====================================================
+   TOP BAR & NAVBAR
+   ===================================================== */
+.top-bar { background: var(--text-dark); color: white; font-size: 0.85rem; padding: 8px 0; }
+.trust-badge { color: var(--secondary-color); font-weight: 600; margin-right: 20px; }
+.lang-toggle { background: transparent; border: 1px solid rgba(255,255,255,0.3); color: white; padding: 4px 12px; border-radius: 20px; cursor: pointer; font-family: var(--font-primary); display: flex; gap: 8px; align-items: center; }
+.lang-indicator { opacity: 0.5; transition: opacity 0.3s; }
+.lang-indicator.active { opacity: 1; font-weight: bold; color: var(--saffron); }
+
+.navbar { position: sticky; top: 0; background: rgba(252, 249, 245, 0.95); backdrop-filter: blur(15px); z-index: 100; border-bottom: 2px solid var(--secondary-color); padding: 15px 0; transition: all 0.3s ease; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { font-size: 2rem; animation: float 3s ease-in-out infinite; }
+.logo-text { display: flex; flex-direction: column; }
+.trust-title { font-size: 0.7rem; letter-spacing: 1px; color: var(--text-dark); opacity: 0.7; text-transform: uppercase; }
+.main-title { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--primary-color); }
+
+.nav-menu { display: flex; gap: 20px; list-style: none; align-items: center; }
+.nav-menu a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.95rem; position: relative; }
+.nav-menu a::after { content: ''; position: absolute; bottom: -5px; left: 50%; width: 0; height: 2px; background: var(--saffron); transition: all 0.3s; transform: translateX(-50%); }
+.nav-menu a:hover::after, .nav-menu a.active::after { width: 80%; }
+.nav-menu a:hover { color: var(--saffron); }
+
+/* Mobile Menu Toggle */
+.menu-toggle { display: none; flex-direction: column; gap: 5px; padding: 8px; background: none; border: none; cursor: pointer; }
+.menu-toggle span { width: 25px; height: 3px; background: var(--saffron); border-radius: 3px; transition: all 0.3s; }
+.menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+/* =====================================================
+   HERO SECTION 
+   ===================================================== */
+.hero { min-height: 90vh; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
+
+/* Mandala background pattern */
+.hero::before { content: ''; position: absolute; top: 50%; left: 50%; width: 800px; height: 800px; transform: translate(-50%, -50%); background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none; animation: spin 60s linear infinite; }
+
+.floating-oms { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 1; }
+.floating-om { position: absolute; font-size: 2rem; color: var(--secondary-color); opacity: 0.3; animation: floatOm 8s ease-in-out infinite; }
+.floating-om:nth-child(2n) { animation-delay: -2s; font-size: 1.5rem; opacity: 0.2; }
+.floating-om:nth-child(3n) { animation-delay: -4s; font-size: 2.5rem; opacity: 0.15; }
+
+.hero-content { position: relative; z-index: 2; max-width: 800px; padding: 2rem; }
+.hero h1 { color: white; font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); animation: fadeInUp 1s ease; }
+.hero-subtitle { color: rgba(255,255,255,0.8); font-size: clamp(1rem, 2vw, 1.25rem); margin-bottom: 2rem; animation: fadeInUp 1s ease 0.2s both; }
+
+.sanskrit-mantra { background: rgba(255, 248, 240, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 2rem; text-align: center; }
+.mantra-sanskrit { font-family: var(--font-devanagari); font-size: 1.25rem; color: var(--secondary-light); line-height: 1.8; margin: 0; }
+.hero-buttons { display: flex; gap: 1rem; justify-content: center; animation: fadeInUp 1s ease 0.6s both; }
+
+/* =====================================================
+   SEVA & DARSHAN TIERS
+   ===================================================== */
+.seva-section { padding: 5rem 0; background: var(--bg-cream); }
+.tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.tier-card { background: white; border-radius: var(--radius-lg); padding: 2.5rem; border: 1px solid rgba(0,0,0,0.05); box-shadow: var(--shadow-lg); position: relative; transition: transform 0.3s; }
+.tier-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-xl); border-color: var(--secondary-color); }
+.tier-card.premium-tier { border: 2px solid var(--secondary-color); background: linear-gradient(to bottom, white, #fffdf5); }
+.tier-badge { position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); background: var(--saffron); color: white; padding: 4px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; white-space: nowrap; }
+.tier-icon { font-size: 2.5rem; margin-bottom: 1rem; text-align: center; }
+.tier-card h3 { text-align: center; margin-bottom: 0.5rem; }
+.tier-price { font-size: 2rem; font-weight: bold; color: var(--primary-color); margin: 1rem 0; border-bottom: 1px solid #eee; padding-bottom: 1rem; text-align: center; }
+.tier-price span { font-size: 0.9rem; color: #888; font-weight: normal; }
+.tier-features { list-style: none; margin-bottom: 2rem; }
+.tier-features li { margin-bottom: 10px; color: #555; display: flex; gap: 8px; }
+
+/* =====================================================
+   DIGITAL SERVICES (LIVE FEED & PRASADAM)
+   ===================================================== */
+.digital-services { padding: 5rem 0; background: #1a1a2e; color: white; }
+.digital-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center; }
+.live-feed-card { background: rgba(0,0,0,0.3); border-radius: var(--radius-lg); padding: 1.5rem; border: 1px solid rgba(255,255,255,0.1); }
+.live-header h3 { color: white; margin: 0; }
+.live-pulse { background: red; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; animation: pulse 2s infinite; }
+.video-placeholder { background: #000; aspect-ratio: 16/9; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #666; margin: 1rem 0; }
+.feed-note { font-size: 0.85rem; color: #aaa; text-align: center; margin: 0; }
+
+.prasadam-card { background: white; color: var(--text-dark); padding: 3rem; border-radius: var(--radius-lg); text-align: center; }
+.prasadam-icon { font-size: 3rem; margin-bottom: 1rem; }
+.prasadam-card h2 { color: var(--primary-color); margin-bottom: 1rem; }
+.prasadam-card p { margin-bottom: 1.5rem; }
+.form-group { margin: 1rem 0; text-align: left; }
+.form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: var(--font-primary); transition: border-color 0.3s; }
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--saffron); }
+
+/* =====================================================
+   MAHA DARSHAN VISUAL GALLERY
+   ===================================================== */
+.maha-darshan { padding: 5rem 0; background: var(--bg-white); }
+.section-subtitle { font-size: 1.1rem; color: var(--text-medium); margin-top: -0.5rem; margin-bottom: 1.5rem; }
+
+.darshan-grid { 
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: repeat(2, 300px); 
+  gap: 1.5rem; 
+}
+
+.darshan-item { 
+  position: relative; 
+  border-radius: var(--radius-lg); 
+  overflow: hidden; 
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+}
+
+.darshan-item img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  transition: transform 0.7s ease; 
+}
+
+.darshan-item:hover img { transform: scale(1.05); }
+
+.feature-darshan { grid-row: span 2; }
+
+.darshan-overlay { 
+  position: absolute; 
+  bottom: 0; left: 0; right: 0; 
+  background: linear-gradient(to top, rgba(15,15,26,0.95) 0%, rgba(15,15,26,0.6) 60%, transparent 100%); 
+  padding: 2.5rem 2rem 1.5rem; 
+  color: white; 
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.darshan-item:hover .darshan-overlay { transform: translateY(0); }
+.darshan-icon { font-size: 2rem; display: block; margin-bottom: 0.5rem; filter: drop-shadow(0 0 10px rgba(255, 153, 51, 0.5)); }
+.darshan-overlay h3 { color: white; margin-bottom: 0.5rem; font-size: 1.4rem; }
+.darshan-overlay p { color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-bottom: 1rem; }
+
+/* =====================================================
+   YATRA LOGISTICS
+   ===================================================== */
+.logistics-section { padding: 5rem 0; background: var(--bg-cream); }
+.logistics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: center; }
+.logic-card { padding: 2rem; background: white; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.05); transition: transform 0.3s; }
+.logic-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+.logic-icon { font-size: 3rem; margin-bottom: 1rem; }
+.logic-link { color: var(--primary-color); font-weight: bold; margin-top: 1rem; display: inline-block; }
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+.footer { background: var(--bg-dark); color: rgba(255,255,255,0.8); padding: 4rem 0 1rem; border-top: 4px solid var(--saffron); }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2rem; }
+.ssl-badge { margin-top: 1rem; }
+.footer h3, .footer h4 { color: var(--secondary-color); margin-bottom: 1rem; }
+.footer-bottom { text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+.footer-bottom a { color: var(--saffron); text-decoration: none; }
+
+/* =====================================================
+   KEYFRAME ANIMATIONS
+   ===================================================== */
+@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes floatOm { 0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; } 50% { transform: translateY(-30px) rotate(10deg); opacity: 0.5; } }
+@keyframes spin { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
